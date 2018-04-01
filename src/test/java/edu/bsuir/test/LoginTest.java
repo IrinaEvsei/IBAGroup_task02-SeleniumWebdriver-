@@ -1,6 +1,7 @@
 package edu.bsuir.test;
 
 import edu.bsuir.driver.WebDriverSingleton;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -179,5 +180,10 @@ public class LoginTest {
         password.sendKeys(Keys.RETURN);
         WebElement userName = driver.findElement(By.xpath("//div[@class = 'float-box']//div//h3"));
         Assert.assertEquals("Александр Евгеньевич Кабанов", userName.getText());
+    }
+
+    @After
+    public  void shutDown() {
+        driver.quit();
     }
 }

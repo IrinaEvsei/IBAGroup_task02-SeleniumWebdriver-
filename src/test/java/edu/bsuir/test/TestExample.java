@@ -52,7 +52,7 @@ public class TestExample {
     }
 
     @Test
-    public void createApplication(){
+    public void createApplication() throws InterruptedException {
         driver.get("http://testing.cld.iba.by/web/guest/recruiting/applications/-/applications/createApplication");
 
         WebElement position = driver.findElement(By.xpath("//*[@id=\"name\"]"));
@@ -105,6 +105,7 @@ public class TestExample {
 
         WebElement editrequiredCompetence = driver.findElement(By.xpath("//*[@id=\"editrequiredCompetence\"]"));
         editrequiredCompetence.click();
+        Thread.sleep(3000);
 
         WebElement word = driver.findElement(By.id("searchCompetenceWord"));
         word.sendKeys("Обучаемость");
@@ -112,7 +113,7 @@ public class TestExample {
         WebElement competenciesUL = driver.findElement(By.id("competence_1103"));
         action.doubleClick(competenciesUL).build().perform();
 
-        WebElement modalOkBtn = driver.findElement(By.xpath("//*[@id=\"yui_patched_v3_11_0_3_1522509260573_8285\"]"));
+        WebElement modalOkBtn = driver.findElement(By.className("btn-primary-modal"));
         modalOkBtn.click();
 
         WebElement comment = driver.findElement(By.xpath("//*[@id=\"comment\"]"));
@@ -121,7 +122,7 @@ public class TestExample {
         WebElement saveBtn = driver.findElement(By.xpath("//*[@id=\"save\"]"));
         saveBtn.click();
 
-        WebElement message = driver.findElement(By.xpath("//*[@id=\"successMessage\"]"));
-        Assert.assertEquals("Заявка успешно сохранена",message.getText());
+        WebElement message = driver.findElement(By.id("sendToApprovalButton"));
+        Assert.assertEquals("Отправить на согласование",message.getText());
     }
 }
