@@ -9,6 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import sun.awt.windows.WEmbeddedFrame;
 
 
@@ -17,7 +19,7 @@ public class TestExample {
     private WebDriver driver = WebDriverSingleton.getInstance();
 
     @Before
-    public void login() {
+    public void positiveDataForLogin() {
         driver.get("http://testing.cld.iba.by/");
         WebElement login = driver.findElement(By.id("_58_login")) ;
         WebElement password = driver.findElement(By.id("_58_password"));
@@ -103,15 +105,14 @@ public class TestExample {
 
         WebElement editrequiredCompetence = driver.findElement(By.xpath("//*[@id=\"editrequiredCompetence\"]"));
         editrequiredCompetence.click();
-        WebElement input = driver.findElement(By.xpath("//*[@id=\"searchCompetenceWord\"]"));
-        input.sendKeys("Обучаемость");
-        WebElement addCompetence = driver.findElement(By.cssSelector("//*[contains(@class, 'icon-arrow-right')]\n"));
-        addCompetence.click();
-//        WebElement basicCompetence = driver.findElement(By.xpath("//*[@id=\"category_22\"]"));
-//        basicCompetence.click();
-//        WebElement addCompetence = driver.findElement(By.xpath("//*[@id=\"yui_patched_v3_11_0_3_1522413201989_8743\"]"));
-//        addCompetence.click();
-        WebElement modalOkBtn = driver.findElement(By.xpath("//*[@id=\"yui_patched_v3_11_0_3_1522413201989_8910\"]"));
+
+        WebElement word = driver.findElement(By.id("searchCompetenceWord"));
+        word.sendKeys("Обучаемость");
+        Actions action = new Actions(driver);
+        WebElement competenciesUL = driver.findElement(By.id("competence_1103"));
+        action.doubleClick(competenciesUL).build().perform();
+
+        WebElement modalOkBtn = driver.findElement(By.xpath("//*[@id=\"yui_patched_v3_11_0_3_1522509260573_8285\"]"));
         modalOkBtn.click();
 
         WebElement comment = driver.findElement(By.xpath("//*[@id=\"comment\"]"));
