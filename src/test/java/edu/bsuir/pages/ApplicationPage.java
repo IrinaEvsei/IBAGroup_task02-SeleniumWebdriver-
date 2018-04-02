@@ -24,15 +24,15 @@ public class ApplicationPage {
     }
 
     public void setPriority(String priority) {
-        if (priority.equals("низкий")) {
+        if (priority == "низкий") {
             WebElement element = driver.findElement(ApplicationPageElements.PRIORITY_LOW);
             element.click();
         }
-        if (priority.equals("средний")) {
+        if (priority == "средний") {
             WebElement element = driver.findElement(ApplicationPageElements.PRIORITY_MIDDLE);
             element.click();
         }
-        if (priority.equals("высокий")) {
+        if (priority == "высокий") {
             WebElement element = driver.findElement(ApplicationPageElements.PRIORITY_HIGH);
             element.click();
         }
@@ -45,63 +45,61 @@ public class ApplicationPage {
     }
 
     public void setSalaryType(String salaryType) {
-        if (salaryType.equals("BEL")) {
+        if (salaryType == "BEL") {
             WebElement element = driver.findElement(ApplicationPageElements.SALARY_TYPE_BEL);
             element.click();
         }
-        if (salaryType.equals("RUS")) {
+        if (salaryType == "RUS") {
             WebElement element = driver.findElement(ApplicationPageElements.SALARY_TYPE_RUS);
             element.click();
         }
-        if (salaryType.equals("USD")) {
+        if (salaryType == "USD") {
             WebElement element = driver.findElement(ApplicationPageElements.SALARY_TYPE_USD);
             element.click();
         }
-        if (salaryType.equals("EUR")) {
+        if (salaryType == "EUR") {
             WebElement element = driver.findElement(ApplicationPageElements.SALARY_TYPE_EUR);
             element.click();
         }
     }
 
     public void setContractType(String contractType) {
-        if (contractType.equals("Трудовой договор")) {
+        if (contractType == "Трудовой договор") {
             WebElement element = driver.findElement(ApplicationPageElements.CONTRACT_TYPE_0);
             element.click();
         }
-        if (contractType.equals("Договор подряда")) {
+        if (contractType == "Договор подряда") {
             WebElement element = driver.findElement(ApplicationPageElements.CONTRACT_TYPE_1);
             element.click();
         }
-        if (contractType.equals("Контракт")) {
+        if (contractType == "Контракт") {
             WebElement element = driver.findElement(ApplicationPageElements.CONTRACT_TYPE_2);
             element.click();
         }
-
-
     }
 
     public void setScheduleType(String scheduleType) {
-        if (scheduleType.equals("Полная занятость")) {
+        if (scheduleType == "Полная занятость") {
             WebElement element = driver.findElement(ApplicationPageElements.SCHEDULE_TYPE_1);
             element.click();
         }
-        if (scheduleType.equals("Частичная занятость")) {
+        if (scheduleType == "Частичная занятость") {
             WebElement element = driver.findElement(ApplicationPageElements.SCHEDULE_TYPE_2);
             element.click();
         }
-        if (scheduleType.equals("Проектная занятость")) {
+        if (scheduleType == "Проектная занятость") {
             WebElement element = driver.findElement(ApplicationPageElements.SCHEDULE_TYPE_3);
             element.click();
         }
-        if (scheduleType.equals("Стажировка")) {
+        if (scheduleType == "Стажировка") {
             WebElement element = driver.findElement(ApplicationPageElements.SCHEDULE_TYPE_4);
             element.click();
         }
     }
 
-    public void setSubordinates(String subordinates) {
+    public void setEmployees(String employees) {
         WebElement element = driver.findElement(ApplicationPageElements.EMPLOYEES);
-        element.sendKeys(subordinates);
+        element.sendKeys(employees);
     }
 
     public void setBusinessTrip(String businessTrip) {
@@ -133,49 +131,49 @@ public class ApplicationPage {
     }
 
     public void setCandidateType(String candidateType) {
-        if (candidateType.equals("Внешний")) {
+        if (candidateType == "Внешний") {
             WebElement element = driver.findElement(By.id("candidateTypeInternal"));
             element.click();
-        } else if (candidateType.equals("Внутренний")) {
+        } else if (candidateType == "Внутренний") {
             WebElement element = driver.findElement(ApplicationPageElements.CANDIDATE_TYPE_INTERNAL);
             element.click();
         }
     }
 
     public void setEducationLevel(String educationLevel) {
-        if (educationLevel.equals("Не имеет значения")) {
+        if (educationLevel == "Не имеет значения") {
             WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_LEVEL_NO);
             element.click();
         }
-        if (educationLevel.equals("Общеее среднее")) {
+        if (educationLevel == "Общеее среднее") {
             WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_LEVEL_1);
             element.click();
         }
-        if (educationLevel.equals("Проефессионально-техническое")) {
+        if (educationLevel == "Проефессионально-техническое") {
             WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_LEVEL_2);
             element.click();
         }
-        if (educationLevel.equals("Среднее специальное")) {
+        if (educationLevel == "Среднее специальное") {
             WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_LEVEL_3);
             element.click();
         }
 
-        if (educationLevel.equals("Высшее")) {
+        if (educationLevel == "Высшее") {
             WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_LEVEL_4);
             element.click();
         }
     }
 
-    public void setRequiredEducation(String requiredEducation) {
+    public void setEducationSpecialization(String educationSpecialization) {
         WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_SPECIALIZATION);
-        element.sendKeys(requiredEducation);
+        element.sendKeys(educationSpecialization);
     }
-    public void setPriorityOrganisations(String priorityOrganisations) {
+    public void setUndesirableWorkExperience(String undesirableWorkExperience) {
         WebElement element = driver.findElement(ApplicationPageElements.UNDESIRABLE_WORKING_EXPERIENCE);
-        element.sendKeys(priorityOrganisations);
+        element.sendKeys(undesirableWorkExperience);
 
     }
-    public void setObligatoryCompetences() {
+    public void setCompetences() {
         WebElement element = driver.findElement(ApplicationPageElements.OK_COMPETENCE_BUTTON);
         element.click();
         WebElement element1 = driver.findElement(ApplicationPageElements.MS_OFFICE);
