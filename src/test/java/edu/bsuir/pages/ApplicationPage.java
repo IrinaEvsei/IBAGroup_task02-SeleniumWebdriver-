@@ -13,8 +13,6 @@ public class ApplicationPage {
     public void setName(String name) {
         WebElement element = driver.findElement(ApplicationPageElements.NAME);
         element.sendKeys(name);
-
-
     }
 
     public void setClosingDate(String date) {
@@ -124,7 +122,7 @@ public class ApplicationPage {
 
     }
 
-    public void setReason(String reason) {
+    public void setCreationReason(String reason) {
         WebElement element = driver.findElement(ApplicationPageElements.CREATION_REASON);
         element.sendKeys(reason);
 
@@ -174,7 +172,7 @@ public class ApplicationPage {
 
     }
     public void setCompetences() {
-        WebElement element = driver.findElement(ApplicationPageElements.OK_COMPETENCE_BUTTON);
+        WebElement element = driver.findElement(ApplicationPageElements.EDIT_REQUIRED_COMPETENCE_BUTTON);
         element.click();
         WebElement element1 = driver.findElement(ApplicationPageElements.MS_OFFICE);
         element1.click();
@@ -184,7 +182,6 @@ public class ApplicationPage {
         actions.doubleClick(element2);
         actions.click(okButton);
         actions.perform();
-
     }
     public void saveApplication() {
         WebElement element = driver.findElement(ApplicationPageElements.SAVE_BUTTON);
