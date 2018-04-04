@@ -10,13 +10,11 @@ public class LoginPage {
 
     public void getLoginPage() {
         driver.get(LoginPageElements.URL);
-
     }
+
     public void typeLogin(String username) {
         WebElement element = driver.findElement(LoginPageElements.USERNAME);
         element.sendKeys(username);
-
-
     }
 
     public void typePassword(String password) {

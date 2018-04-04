@@ -1,6 +1,7 @@
 package edu.bsuir.pages.old;
 
 import edu.bsuir.driver.WebDriverSingleton;
+import edu.bsuir.elements.Element;
 import edu.bsuir.elements.old.ApplicationPageElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,188 +9,83 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class ApplicationPage {
-    WebDriver driver = WebDriverSingleton.getInstance();
+    public void application() throws Exception {
+        WebDriverSingleton.getInstance().get(ApplicationPageElements.URL);
 
-    public void setName(String name) {
-        WebElement element = driver.findElement(ApplicationPageElements.NAME);
-        element.sendKeys(name);
-    }
+        Element applicationName = new Element("Название заявки", ApplicationPageElements.NAME);
+        applicationName.typeText("QA Engineer");
 
-    public void setClosingDate(String date) {
-        WebElement element = driver.findElement(ApplicationPageElements.PLANNED_CLOSING_DATE);
-        element.sendKeys(date);
+        Element applicationDate = new Element("Дата закрытия", ApplicationPageElements.PLANNED_CLOSING_DATE);
+        applicationDate.typeText("11.04.2018");
 
-    }
+        Element applicationPriority = new Element("Приоритет заявки", ApplicationPageElements.PRIORITY_HIGH);
+        applicationPriority.clickElement();
 
-    public void setPriority(String priority) {
-        if (priority == "низкий") {
-            WebElement element = driver.findElement(ApplicationPageElements.PRIORITY_LOW);
-            element.click();
-        }
-        if (priority == "средний") {
-            WebElement element = driver.findElement(ApplicationPageElements.PRIORITY_MIDDLE);
-            element.click();
-        }
-        if (priority == "высокий") {
-            WebElement element = driver.findElement(ApplicationPageElements.PRIORITY_HIGH);
-            element.click();
-        }
+        Element applicationQuantity = new Element("Количество сотрудников", ApplicationPageElements.QUANTITY);
+        applicationQuantity.typeText("2");
 
-    }
+        Element applicationReason = new Element("Причина появления", ApplicationPageElements.CREATION_REASON);
+        applicationReason.typeText("Нехватка");
 
-    public void setSalary(String salary) {
-        WebElement element = driver.findElement(ApplicationPageElements.SALARY);
-        element.sendKeys(salary);
-    }
+        Element applicationContractType = new Element("Тип договора", ApplicationPageElements.CONTRACT_TYPE_1);
+        applicationContractType.clickElement();
 
-    public void setSalaryType(String salaryType) {
-        if (salaryType == "BEL") {
-            WebElement element = driver.findElement(ApplicationPageElements.SALARY_TYPE_BEL);
-            element.click();
-        }
-        if (salaryType == "RUS") {
-            WebElement element = driver.findElement(ApplicationPageElements.SALARY_TYPE_RUS);
-            element.click();
-        }
-        if (salaryType == "USD") {
-            WebElement element = driver.findElement(ApplicationPageElements.SALARY_TYPE_USD);
-            element.click();
-        }
-        if (salaryType == "EUR") {
-            WebElement element = driver.findElement(ApplicationPageElements.SALARY_TYPE_EUR);
-            element.click();
-        }
-    }
+        Element applicationSalary = new Element("Размер зарплаты", ApplicationPageElements.SALARY);
+        applicationSalary.typeText("500");
 
-    public void setContractType(String contractType) {
-        if (contractType == "Трудовой договор") {
-            WebElement element = driver.findElement(ApplicationPageElements.CONTRACT_TYPE_0);
-            element.click();
-        }
-        if (contractType == "Договор подряда") {
-            WebElement element = driver.findElement(ApplicationPageElements.CONTRACT_TYPE_1);
-            element.click();
-        }
-        if (contractType == "Контракт") {
-            WebElement element = driver.findElement(ApplicationPageElements.CONTRACT_TYPE_2);
-            element.click();
-        }
-    }
+        Element applicationSalaryType = new Element("Валюта", ApplicationPageElements.SALARY_TYPE_USD);
+        applicationSalaryType.clickElement();
 
-    public void setScheduleType(String scheduleType) {
-        if (scheduleType == "Полная занятость") {
-            WebElement element = driver.findElement(ApplicationPageElements.SCHEDULE_TYPE_1);
-            element.click();
-        }
-        if (scheduleType == "Частичная занятость") {
-            WebElement element = driver.findElement(ApplicationPageElements.SCHEDULE_TYPE_2);
-            element.click();
-        }
-        if (scheduleType == "Проектная занятость") {
-            WebElement element = driver.findElement(ApplicationPageElements.SCHEDULE_TYPE_3);
-            element.click();
-        }
-        if (scheduleType == "Стажировка") {
-            WebElement element = driver.findElement(ApplicationPageElements.SCHEDULE_TYPE_4);
-            element.click();
-        }
-    }
+        Element applicationSchedule = new Element("Занятость", ApplicationPageElements.SCHEDULE_TYPE_3);
+        applicationSchedule.clickElement();
 
-    public void setEmployees(String employees) {
-        WebElement element = driver.findElement(ApplicationPageElements.EMPLOYEES);
-        element.sendKeys(employees);
-    }
+        Element applicationEmployees = new Element("Подчиненные", ApplicationPageElements.EMPLOYEES);
+        applicationEmployees.typeText("3");
 
-    public void setBusinessTrip(String businessTrip) {
-        WebElement element = driver.findElement(ApplicationPageElements.BUSINESS_TRIP);
-        element.sendKeys(businessTrip);
-    }
+        Element applicationBusinessTrip = new Element("Командировки", ApplicationPageElements.BUSINESS_TRIP);
+        applicationBusinessTrip.typeText("США / Австралия");
 
-    public void setTimetable(String timetable) {
-        WebElement element = driver.findElement(ApplicationPageElements.TIMETABLE);
-        element.sendKeys(timetable);
-    }
+        Element applicationTimetable = new Element("График работы", ApplicationPageElements.TIMETABLE);
+        applicationTimetable.typeText("40 часов в неделю");
 
-    public void setProbationPeriod(String probationPeriod) {
-        WebElement element = driver.findElement(ApplicationPageElements.PROBATION_PERIOD);
-        element.sendKeys(probationPeriod);
+        Element applicationProbationPeriod = new Element("Испытательный срок", ApplicationPageElements.PROBATION_PERIOD);
+        applicationProbationPeriod.typeText("2 месяца");
 
-    }
+        Element applicationResponsibilities = new Element("Обязанности", ApplicationPageElements.RESPONSIBILITIES);
+        applicationResponsibilities.typeText("Много и упорно работать");
 
-    public void setResponsibilities(String responsibilities) {
-        WebElement element = driver.findElement(ApplicationPageElements.RESPONSIBILITIES);
-        element.sendKeys(responsibilities);
+        Element applicationCandidateType = new Element("Тип кандидата", ApplicationPageElements.CANDIDATE_TYPE_INTERNAL);
+        applicationCandidateType.clickElement();
 
-    }
+        Element applicationEducationLevel = new Element("Уровень образования", ApplicationPageElements.EDUCATION_LEVEL_3);
+        applicationEducationLevel.clickElement();
 
-    public void setCreationReason(String reason) {
-        WebElement element = driver.findElement(ApplicationPageElements.CREATION_REASON);
-        element.sendKeys(reason);
+        Element applicationRequiredEducation = new Element("Требуемый уровень образования", ApplicationPageElements.EDUCATION_SPECIALIZATION);
+        applicationRequiredEducation.typeText("BSU");
 
-    }
+        Element applicationExperience = new Element("Опыт работы", ApplicationPageElements.EXPERIENCE_4);
+        applicationExperience.clickElement();
 
-    public void setCandidateType(String candidateType) {
-        if (candidateType == "Внешний") {
-            WebElement element = driver.findElement(By.id("candidateTypeInternal"));
-            element.click();
-        } else if (candidateType == "Внутренний") {
-            WebElement element = driver.findElement(ApplicationPageElements.CANDIDATE_TYPE_INTERNAL);
-            element.click();
-        }
-    }
+        Element applicationPriorityOrganisations = new Element("Приоритетные организации", ApplicationPageElements.PRIORITY_WORKING_EXPERIENCE);
+        applicationPriorityOrganisations.typeText("IBA");
 
-    public void setEducationLevel(String educationLevel) {
-        if (educationLevel == "Не имеет значения") {
-            WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_LEVEL_NO);
-            element.click();
-        }
-        if (educationLevel == "Общеее среднее") {
-            WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_LEVEL_1);
-            element.click();
-        }
-        if (educationLevel == "Проефессионально-техническое") {
-            WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_LEVEL_2);
-            element.click();
-        }
-        if (educationLevel == "Среднее специальное") {
-            WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_LEVEL_3);
-            element.click();
-        }
+        Element applicationUndesirableExperience = new Element("Плохие организации", ApplicationPageElements.UNDESIRABLE_WORKING_EXPERIENCE);
+        applicationUndesirableExperience.typeText("БГУИР");
 
-        if (educationLevel == "Высшее") {
-            WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_LEVEL_4);
-            element.click();
-        }
-    }
+        Element applicationEditRequiredCompetence = new Element("Обязательные компетенции", ApplicationPageElements.EDIT_REQUIRED_COMPETENCE_BUTTON);
+        applicationEditRequiredCompetence.clickElement();
+        Element msOffice = new Element("Офис майрософт", ApplicationPageElements.MS_OFFICE);
+        msOffice.clickElement();
+        Element applicationMSExcel = new Element("Word", ApplicationPageElements.MS_EXCEL);
+        applicationMSExcel.doubleClick();
+        Element applicationOKCompetenceButton = new Element("Ok", ApplicationPageElements.OK_COMPETENCE_BUTTON);
+        applicationOKCompetenceButton.doubleClick();
 
-    public void setEducationSpecialization(String educationSpecialization) {
-        WebElement element = driver.findElement(ApplicationPageElements.EDUCATION_SPECIALIZATION);
-        element.sendKeys(educationSpecialization);
-    }
-    public void setUndesirableWorkExperience(String undesirableWorkExperience) {
-        WebElement element = driver.findElement(ApplicationPageElements.UNDESIRABLE_WORKING_EXPERIENCE);
-        element.sendKeys(undesirableWorkExperience);
+        Element applicationComment = new Element("Comment", ApplicationPageElements.COMMENT);
+        applicationComment.typeText("Magic");
 
-    }
-    public void setCompetences() {
-        WebElement element = driver.findElement(ApplicationPageElements.EDIT_REQUIRED_COMPETENCE_BUTTON);
-        element.click();
-        WebElement element1 = driver.findElement(ApplicationPageElements.MS_OFFICE);
-        element1.click();
-        WebElement element2 = driver.findElement(ApplicationPageElements.MS_EXCEL);
-        WebElement okButton = driver.findElement(By.xpath("//button[text() = 'OK']"));
-        Actions actions = new Actions(driver);
-        actions.doubleClick(element2);
-        actions.click(okButton);
-        actions.perform();
-    }
-    public void saveApplication() {
-        WebElement element = driver.findElement(ApplicationPageElements.SAVE_BUTTON);
-        Actions actions = new Actions(driver);
-        actions.doubleClick(element);
-        actions.perform();
-    }
-    public void getApplicationPage() {
-        driver.get(ApplicationPageElements.URL);
+        Element applicationSaveButton = new Element("Save", ApplicationPageElements.SAVE_BUTTON);
+        applicationSaveButton.doubleClick();
+
     }
 }
