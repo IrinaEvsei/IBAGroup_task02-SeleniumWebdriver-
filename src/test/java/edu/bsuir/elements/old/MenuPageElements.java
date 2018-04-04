@@ -1,4 +1,4 @@
-package edu.bsuir.elements;
+package edu.bsuir.elements.old;
 
 import org.openqa.selenium.By;
 

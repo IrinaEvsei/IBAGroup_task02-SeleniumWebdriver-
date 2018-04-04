@@ -1,4 +1,4 @@
-package edu.bsuir.test;
+package edu.bsuir.test.old;
 
 import edu.bsuir.driver.WebDriverSingleton;
 import org.junit.After;

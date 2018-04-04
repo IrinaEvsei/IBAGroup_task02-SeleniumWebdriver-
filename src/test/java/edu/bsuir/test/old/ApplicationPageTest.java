@@ -1,8 +1,6 @@
-package edu.bsuir.test;
+package edu.bsuir.test.old;
 
-import edu.bsuir.driver.WebDriverSingleton;
-import edu.bsuir.pages.ApplicationPage;
-import org.junit.After;
+import edu.bsuir.pages.old.ApplicationPage;
 import org.junit.Test;
 
 public class ApplicationPageTest extends LoginPageTest {
@@ -35,10 +33,5 @@ public class ApplicationPageTest extends LoginPageTest {
         applicationPage.setUndesirableWorkExperience("не имеет значения");
         applicationPage.setCompetences();
         applicationPage.saveApplication();
-    }
-
-    @After
-    public void closeTest() {
-        WebDriverSingleton.destroyInstance();
     }
 }

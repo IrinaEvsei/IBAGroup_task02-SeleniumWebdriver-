@@ -1,7 +1,7 @@
-package edu.bsuir.pages;
+package edu.bsuir.pages.old;
 
 import edu.bsuir.driver.WebDriverSingleton;
-import edu.bsuir.elements.LoginPageElements;
+import edu.bsuir.elements.old.LoginPageElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 

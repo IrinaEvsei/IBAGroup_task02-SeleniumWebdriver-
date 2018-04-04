@@ -1,8 +1,8 @@
-package edu.bsuir.pages;
+package edu.bsuir.pages.old;
 
 import edu.bsuir.driver.WebDriverSingleton;
-import edu.bsuir.elements.HomePageElements;
-import edu.bsuir.elements.MenuPageElements;
+import edu.bsuir.elements.old.HomePageElements;
+import edu.bsuir.elements.old.MenuPageElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
