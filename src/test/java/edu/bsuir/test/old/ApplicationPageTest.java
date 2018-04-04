@@ -10,8 +10,7 @@ public class ApplicationPageTest {
 
     @Test
     public void createApplication() throws Exception {
-        ApplicationPage appPage = new ApplicationPage();
-        appPage.application();
+        applicationPage.application();
 
     }
 

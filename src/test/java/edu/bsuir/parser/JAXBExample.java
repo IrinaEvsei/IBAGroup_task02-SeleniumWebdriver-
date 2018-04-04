@@ -19,11 +19,11 @@ public class JAXBExample {
         User roleData = (User) un.unmarshal(reader);
         List user = roleData.getRole();
 //iterate over object
-        for (Role e : user) {
-            System.out.println("username : " + e.getUsername());
-            System.out.println("password : " + e.getPassword());
-            System.out.println("--------------------------");
-        }
+//        for (Role e : user) {
+//            System.out.println("username : " + e.getUsername());
+//            System.out.println("password : " + e.getPassword());
+//            System.out.println("--------------------------");
+//        }
     }
     static String getFileContent(String filePath) {
         FileReader fr = null;
