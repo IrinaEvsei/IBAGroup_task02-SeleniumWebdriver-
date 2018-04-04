@@ -1,12 +1,8 @@
-package edu.bsuir.pages.old;
+package edu.bsuir.pages;
 
 import edu.bsuir.driver.WebDriverSingleton;
 import edu.bsuir.elements.Element;
-import edu.bsuir.elements.old.ApplicationPageElements;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import edu.bsuir.elements.applicationelements.ApplicationPageElements;
 
 public class ApplicationPage {
     public void application() throws Exception {

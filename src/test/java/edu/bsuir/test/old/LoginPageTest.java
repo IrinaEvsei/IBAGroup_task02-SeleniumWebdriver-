@@ -1,6 +1,6 @@
 package edu.bsuir.test.old;
 
-import edu.bsuir.pages.old.LoginPage;
+import edu.bsuir.pages.LoginPage;
 import org.junit.Assert;
 import org.junit.Test;
 

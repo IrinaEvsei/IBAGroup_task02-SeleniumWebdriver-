@@ -1,6 +1,6 @@
 package edu.bsuir.test.old;
 
-import edu.bsuir.pages.old.ApplicationPage;
+import edu.bsuir.pages.ApplicationPage;
 import org.junit.Test;
 
 public class ApplicationPageTest extends LoginPageTest {
