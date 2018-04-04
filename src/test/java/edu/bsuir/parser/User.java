@@ -8,6 +8,8 @@ import java.util.List;
 public class User {
     private List<Role> role;
 
+    public User() {}
+
     @XmlElement(name="role")
     public List<Role> getRole() {
         return role;
@@ -15,5 +17,10 @@ public class User {
 
     public void setRole(List<Role> roleList) {
         this.role = roleList;
+    }
+
+    public User(List<Role> role) {
+        super();
+        this.role = role;
     }
 }

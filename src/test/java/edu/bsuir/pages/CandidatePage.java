@@ -1,5 +1,9 @@
 package edu.bsuir.pages;
 
+import edu.bsuir.driver.WebDriverSingleton;
+import edu.bsuir.elements.Element;
+import edu.bsuir.elements.CandidatePageElements;
+
 public class CandidatePage {
     public void candidateFilter() throws Exception {
         WebDriverSingleton.getInstance().get(CandidatePageElements.URL);
@@ -15,6 +19,8 @@ public class CandidatePage {
 
         Element candidateVacancy = new Element("Вакансия", CandidatePageElements.VACANCY_SELECT);
         candidateVacancy.clickElement();
+
+        Element candidateVacancySearchInput = new Element("Вакансия", CandidatePageElements.VACANCY_SEARCH_INPUT_FIELD);
 
     }
 }

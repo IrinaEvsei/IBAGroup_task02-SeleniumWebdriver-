@@ -18,5 +18,6 @@ public class CandidatePageElements {
     public static By STATUS_HIRED = By.xpath("//*[@id=\"status_Hired\"]");
 
     public static By VACANCY_SELECT = By.xpath("//*[@id=\"yui_patched_v3_11_0_3_1522839949782_832\"]");
+    public static By VACANCY_SEARCH_INPUT_FIELD = By.id("searchInput");
 
 }
