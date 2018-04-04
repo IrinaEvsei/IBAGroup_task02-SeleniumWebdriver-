@@ -1,4 +1,4 @@
-package edu.bsuir.test.old;
+package edu.bsuir.test;
 
 import edu.bsuir.driver.WebDriverSingleton;
 import edu.bsuir.pages.LoginPage;

@@ -13,7 +13,7 @@ import javax.xml.validation.SchemaFactory;
 import java.io.*;
 import java.util.List;
 
-public class JAXBExample {
+public class Parser {
 
     public static void main(String[] args) throws IOException, JAXBException, SAXException {
         JAXBContext context = JAXBContext.newInstance(User.class);
