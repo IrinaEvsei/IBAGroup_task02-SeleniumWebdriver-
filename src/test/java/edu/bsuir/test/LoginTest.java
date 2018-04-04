@@ -23,7 +23,6 @@ public class LoginTest {
         loginPage.clickLoginButton();
         Element errorMessage = new Element("Ваш запрос завершился с ошибкой.",By.xpath("//div[@class = 'alert alert-error']"));
         Assert.assertTrue(errorMessage.isElementPresent());
-
     }
 
 //    @Test

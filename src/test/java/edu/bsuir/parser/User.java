@@ -15,6 +15,14 @@ public class User {
         return role;
     }
 
+//    public Role getRoleById(String roleCode){
+//        getRole();
+//        for (Role r: role) {
+//            if(r.getId().equals("recruter")){ return r;}
+//            if(r.getId().equals("director")){ return r;}
+//        }
+//    }
+
     public void setRole(List<Role> roleList) {
         this.role = roleList;
     }
