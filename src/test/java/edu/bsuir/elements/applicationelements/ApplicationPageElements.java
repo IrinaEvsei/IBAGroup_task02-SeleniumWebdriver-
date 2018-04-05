@@ -66,7 +66,7 @@ public class ApplicationPageElements {
     public static By EDIT_REQUIRED_COMPETENCE_BUTTON = By.id("editrequiredCompetence");
     public static By MS_OFFICE = By.xpath("//span[text()='MS Office']");
     public static By MS_EXCEL =  By.xpath("//span[text() = 'MS Word']");
-    public static By OK_COMPETENCE_BUTTON;
+    public static By OK_COMPETENCE_BUTTON = By.xpath("");
     public static By COMMENT = By.id("comment");
     public static By SAVE_BUTTON = By.id("save");
 }

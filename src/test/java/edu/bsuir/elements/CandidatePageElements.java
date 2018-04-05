@@ -20,4 +20,34 @@ public class CandidatePageElements {
     public static By VACANCY_SELECT = By.xpath("//*[@id=\"yui_patched_v3_11_0_3_1522839949782_832\"]");
     public static By VACANCY_SEARCH_INPUT_FIELD = By.id("searchInput");
 
+    public static By RELOCATION_AVAILABLE = By.xpath("//*[@id=\"relocation_Available\"]");
+    public static By RELOCATION_UNAVAILABLE = By.xpath("//*[@id=\"relocation_Unavailable\"]");
+
+    public static By EDUCATION_SELECT = By.xpath("//*[@id=\"yui_patched_v3_11_0_3_1522906137418_884\"]");
+    public static By EDUCATION_SEARCH_FIELD = By.xpath("//*[@id=\"searchInput\"]");
+    public static By EDUCATION_NO = By.xpath("//*[@id=\"education_filtermultiselect-0\"]");
+    public static By EDUCATION_GENERAL_AVERAGE = By.xpath("//*[@id=\"education_filtermultiselect-1\"]");
+    public static By EDUCATION_VOCATION_AND_TECHNICAL = By.xpath("//*[@id=\"education_filtermultiselect-2\"]");
+    public static By EDUCATION_SPECIALIZED_SECONDARY = By.xpath("//*[@id=\"education_filtermultiselect-3\"]");
+    public static By EDUCATION_HIGHER = By.xpath("//*[@id=\"education_filtermultiselect-4\"]");
+    public static By EDUCATION_INCONPLETE_HIGHER = By.xpath("//*[@id=\"education_filtermultiselect-5\"]");
+
+    public static By UNIVERSITY_SELECT = By.xpath("//*[@id=\"yui_patched_v3_11_0_3_1522906137418_7412\"]");
+    public static By UNIVERSITY_SEARCH_FIELD = By.xpath("//*[@id=\"searchInput\"]");
+    public static By UNIVERSITY_BSU = By.xpath("//*[@id=\"universities_filtermultiselect-0\"]");
+    public static By UNIVERSITY_BSUIR = By.xpath("//*[@id=\"universities_filtermultiselect-1\"]");
+    public static By UNIVERSITY_BSEU = By.xpath("//*[@id=\"universities_filtermultiselect-2\"]");
+    public static By UNIVERSITY_BSTU = By.xpath("//*[@id=\"universities_filtermultiselect-3\"]");
+
+    public static By COMPETENCE_SELECT = By.xpath("//*[@id=\"yui_patched_v3_11_0_3_1522906137418_7462\"]");
+    public static By COMPETENCE_SEARCH_FIELD = By.xpath("//*[@id=\"searchInput\"]");
+    public static By COMPETENCE_MS_ACCESS = By.xpath("//*[@id=\"competencies_filtermultiselect-0\"]");
+    public static By COMPETENCE_MS_ONENOTE = By.xpath("//*[@id=\"competencies_filtermultiselect-1\"]");
+    public static By COMPETENCE_ENGLISH = By.xpath("//*[@id=\"competencies_filtermultiselect-2\"]");
+    public static By COMPETENCE_FRENCH = By.xpath("//*[@id=\"competencies_filtermultiselect-3\"]");
+
+    public static By CANDIDATE_SEARCH = By.xpath("//*[@id=\"searchInput\"]");
+
+    public static By CANDIDATE_CREATE = By.xpath("//*[@id=\"createProfileButton\"]");
+
 }

@@ -24,7 +24,7 @@ public class MenuTest {
     }
 
     @Test
-    public void MenuTest(){
+    public void menuTest(){
         mp.openSidebar();
         mp.clickRecruiting();
         Element errorMessage = new Element("Заявки",By.xpath("//*[@id=\"content\"]/div[1]"));
