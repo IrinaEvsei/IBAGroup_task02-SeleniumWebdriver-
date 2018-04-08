@@ -30,7 +30,7 @@ public class LoginPage {
     public String getTitle() {
         return driver.getTitle();
     }
-    public void destroy() {
-        driver = null;
-    }
+//    public void destroy() {
+//        driver = null;
+//    }
 }

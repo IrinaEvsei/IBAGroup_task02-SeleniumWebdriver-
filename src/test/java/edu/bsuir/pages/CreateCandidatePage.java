@@ -1,40 +1,39 @@
 package edu.bsuir.pages;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
 import edu.bsuir.driver.WebDriverSingleton;
+import edu.bsuir.elements.Element;
 import edu.bsuir.elements.candidatepageelements.CreateCandidatePageElements;
 import org.openqa.selenium.WebDriver;
 
 public class CreateCandidatePage {
     WebDriver driver =  WebDriverSingleton.getInstance();
 
-    public void goToCandidateCreationPage(){
+    public void openCreateCandidatePage(){
         driver.get(CreateCandidatePageElements.URL);
     }
 
-    //-----------------ButtonsBar---------------//
     public void clickBackToListLink(){
         CreateCandidatePageElements.BACK_TO_LIST.clickElement();
     }
     public void clickSaveButton(){
         CreateCandidatePageElements.SAVE_BUTTON.clickElement();
     }
-    //------------//
-    public void enterName(String argument){ CreateCandidatePageElements.NAME.typeText(argument); }
-    public void enterSurname(String argument){ CreateCandidatePageElements.SURNAME.typeText(argument); }
-    public void enterSecondName(String argument){ CreateCandidatePageElements.SECOND_NAME.typeText(argument); }
-    public void enterCountry(String argument){ CreateCandidatePageElements.COUNTRY.typeText(argument); }
-    public void enterCity(String argument){ CreateCandidatePageElements.CITY.typeText(argument); }
-    public void enterPhone(String argument){ CreateCandidatePageElements.PHONE.typeText(argument); }
-    public void enterEmail(String argument){ CreateCandidatePageElements.EMAIL.typeText(argument); }
-    public void enterSkype(String argument){ CreateCandidatePageElements.SKYPE.typeText(argument); }
-    public void clickRelocationCheckbox(){ CreateCandidatePageElements.RELOCATION_CHECKBOX.clickElement(); }
-    public void enterBirthDay(String argument){ CreateCandidatePageElements.DATE_OF_BIRTH_DAY.typeText(argument); }
-    public void enterBirthMonth(String argument){ CreateCandidatePageElements.DATE_OF_BIRTH_MONTH.typeText(argument); }
-    public void enterBirthYear(String argument){ CreateCandidatePageElements.DATE_OF_BIRTH_YEAR.typeText(argument); }
 
-    public void enterDesiredPosition(String argument){ CreateCandidatePageElements.DESIRED_POSITION.typeText(argument); }
-    public void enterAdditionalInfo(String argument){ CreateCandidatePageElements.ADDITIONAL_INFO.typeText(argument); }
+    public void enterName(String name){ CreateCandidatePageElements.NAME.typeText(name); }
+    public void enterSurname(String surname){ CreateCandidatePageElements.SURNAME.typeText(surname); }
+    public void enterSecondName(String secondname){ CreateCandidatePageElements.SECOND_NAME.typeText(secondname); }
+    public void enterCountry(String country){ CreateCandidatePageElements.COUNTRY.typeText(country); }
+    public void enterCity(String city){ CreateCandidatePageElements.CITY.typeText(city); }
+    public void enterPhone(String phone){ CreateCandidatePageElements.PHONE.typeText(phone); }
+    public void enterEmail(String email){ CreateCandidatePageElements.EMAIL.typeText(email); }
+    public void enterSkype(String skype){ CreateCandidatePageElements.SKYPE.typeText(skype); }
+    public void clickRelocationCheckbox(){ CreateCandidatePageElements.RELOCATION_CHECKBOX.clickElement(); }
+    public void enterBirthDay(String bday){ CreateCandidatePageElements.DATE_OF_BIRTH_DAY.typeText(bday); }
+    public void enterBirthMonth(String bmonth){ CreateCandidatePageElements.DATE_OF_BIRTH_MONTH.typeText(bmonth); }
+    public void enterBirthYear(String byear){ CreateCandidatePageElements.DATE_OF_BIRTH_YEAR.typeText(byear); }
+
+    public void enterDesiredPosition(String desireposition){ CreateCandidatePageElements.DESIRED_POSITION.typeText(desireposition); }
+    public void enterAdditionalInfo(String addinfo){ CreateCandidatePageElements.ADDITIONAL_INFO.typeText(addinfo); }
     public void enterEditCompetenceButton(){ CreateCandidatePageElements.EDIT_COMPETENCE_BUTTON.clickElement(); }
 
 
@@ -52,21 +51,22 @@ public class CreateCandidatePage {
 
     public void clickAddExperience(){ CreateCandidatePageElements.ADD_EXPERIENCE_INFO_BUTTON.clickElement(); }
     public void clickDeleteExperience(){ CreateCandidatePageElements.DELETE_EXPERIENCE_INFO_BUTTON.clickElement(); }
-    public void enterPosition(String argument){ CreateCandidatePageElements.EXP_POSITION.typeText(argument); }
-    public void enterCompany(String argument){ CreateCandidatePageElements.EXP_COMPANY.typeText(argument); }
-    public void enterDescription(String argument){ CreateCandidatePageElements.EXP_DESCRIPTION.typeText(argument); }
+    public void enterPosition(String position){ CreateCandidatePageElements.EXP_POSITION.typeText(position); }
+    public void enterCompany(String company){ CreateCandidatePageElements.EXP_COMPANY.typeText(company); }
+    public void enterDescription(String description){ CreateCandidatePageElements.EXP_DESCRIPTION.typeText(description); }
 
     public void clickTillNowCheckbox(){ CreateCandidatePageElements.EXP_TILL_NOW_CHECKBOX.clickElement(); }
 
 
     public void clickAddRecommendation(){ CreateCandidatePageElements.ADD_RECOMENDATIONS_INFO_BUTTON.clickElement(); }
     public void clickDeleteRecommendation(){ CreateCandidatePageElements.DELETE_RECOMENDATIONS_INFO_BUTTON.clickElement(); }
-    public void enterRecommendationName(String argument){ CreateCandidatePageElements.RECOMMENDATION_NAME.typeText(argument); }
-    public void enterRecommendationPosition(String argument){ CreateCandidatePageElements.RECOMMENDATION_POSITION.typeText(argument); }
-    public void enterRecommendationCompany(String argument){ CreateCandidatePageElements.RECOMMENDATION_COMPANY.typeText(argument); }
-    public void enterRecommendationPhone(String argument){ CreateCandidatePageElements.RECOMMENDATION_PHONE.typeText(argument); }
+    public void enterRecommendationName(String recomname){ CreateCandidatePageElements.RECOMMENDATION_NAME.typeText(recomname); }
+    public void enterRecommendationPosition(String recomposition){ CreateCandidatePageElements.RECOMMENDATION_POSITION.typeText(recomposition); }
+    public void enterRecommendationCompany(String recomcompany){ CreateCandidatePageElements.RECOMMENDATION_COMPANY.typeText(recomcompany); }
+    public void enterRecommendationPhone(String recomphone){ CreateCandidatePageElements.RECOMMENDATION_PHONE.typeText(recomphone); }
 
     public String readErrorMessage(){ return CreateCandidatePageElements.ERROR_MESSAGE.getElementText(); }
     public String readWrongTelephone(){ return CreateCandidatePageElements.WRONG_TELEPHONE.getElementText();}
     public String readWrongEmail(){ return CreateCandidatePageElements.WRONG_EMAIL.getElementText();}
+
 }

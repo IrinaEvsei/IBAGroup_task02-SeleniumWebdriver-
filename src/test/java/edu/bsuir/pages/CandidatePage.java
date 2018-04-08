@@ -3,8 +3,18 @@ package edu.bsuir.pages;
 import edu.bsuir.driver.WebDriverSingleton;
 import edu.bsuir.elements.Element;
 import edu.bsuir.elements.candidatepageelements.CandidatePageElements;
+import edu.bsuir.helper.Helper;
 
 public class CandidatePage {
+    public void getCandidatesPage() {
+        WebDriverSingleton.getInstance().get(CandidatePageElements.URL);
+    }
+
+    public void findCandidate(String string) {
+        Element element = new Element("Search", CandidatePageElements.CANDIDATE_SEARCH);
+        element.typeText(string);
+    }
+
     public void getFiltersTitles() throws InterruptedException {
         WebDriverSingleton.getInstance().get(CandidatePageElements.URL);
 
@@ -80,8 +90,7 @@ public class CandidatePage {
 
     public void universityFilter() throws InterruptedException {
         WebDriverSingleton.getInstance().get(CandidatePageElements.URL);
-        Thread.sleep(1000);
-
+        Helper.wait(5);
         Element candidateUniversity = new Element("Университет", CandidatePageElements.UNIVERSITY_SELECT);
         candidateUniversity.clickElement();
         Element candidateUniversityBSU = new Element("БГУ", CandidatePageElements.UNIVERSITY_BSU);

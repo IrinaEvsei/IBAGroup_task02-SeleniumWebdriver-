@@ -59,8 +59,10 @@ public class CandidatePageElements {
     public static By COMPETENCE_ENGLISH = By.xpath("//*[@id=\"competencies_filtermultiselect-2\"]");
     public static By COMPETENCE_FRENCH = By.xpath("//*[@id=\"competencies_filtermultiselect-3\"]");
 
-    public static By CANDIDATE_SEARCH = By.xpath("//*[@id=\"searchInput\"]");
+    public static By CANDIDATE_SEARCH = By.xpath("//input[@placeholder = 'Поиск...']");
 
     public static By CANDIDATE_CREATE = By.xpath("//*[@id=\"createProfileButton\"]");
+
+    public static By SEARCH_RESULT_FIO = By.xpath("//span[@class = 'fio']");
 
 }
