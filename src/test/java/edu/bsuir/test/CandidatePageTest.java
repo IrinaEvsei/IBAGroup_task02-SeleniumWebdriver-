@@ -33,10 +33,42 @@ public class CandidatePageTest {
         Assert.assertTrue(message.isElementPresent());
     }
 
+    @Test
+    public void checkTitles() throws InterruptedException {
+        candidatePage.getFiltersTitles();
+    }
 
     @Test
-    public void searchCandidate() throws Exception {
-        candidatePage.candidateFilter();
+    public void checkSearchCandidateByWorkExperience() throws InterruptedException {
+        candidatePage.searchCandidateByWorkExperience();
+        Element searchTags = new Element("От 1 года", By.xpath("//*[@id=\"experience_filter-tag\"]"));
+        Assert.assertTrue(searchTags.isElementPresent());
+    }
+
+    @Test
+    public void checkVacancySearch()throws InterruptedException{
+        candidatePage.vacancyMenu();
+        Element searchVacancyByInput = new Element("Дизайнр", By.xpath("//*[@id=\"yui_patched_v3_11_0_3_1523163188287_2821\"]/li[2]/div/label"));
+        Assert.assertEquals(searchVacancyByInput.getElementText(),"Дизайнер");
+    }
+
+    @Test
+    public void checkSearchCandidatesByStatus() throws InterruptedException {
+        candidatePage.checkStatusFilter();
+        Thread.sleep(1000);
+        Element searchStatusTags = new Element("Новый", By.xpath("//*[@id=\"status_New-tag\"]"));
+        Assert.assertTrue(searchStatusTags.isElementPresent());
+    }
+
+    @Test // Проверка сообщения "Поиск не дал резузультатов" при поиске вакансии
+    public void checkVacancySearchNoResults(){ }
+
+    @Test
+    public void checkRelocationCheckboxes() throws InterruptedException {
+        candidatePage.relocationAvailable();
+        Element relocationAvailableTag = new Element("возможен переезд", By.xpath("//*[@id=\"relocation_Available-tag\"]"));
+        Assert.assertTrue(relocationAvailableTag.isElementPresent());
+
     }
 
     @After

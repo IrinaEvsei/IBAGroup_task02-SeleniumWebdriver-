@@ -5,6 +5,7 @@ import edu.bsuir.elements.HomePageElements;
 import edu.bsuir.elements.MenuPageElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class MenuPage {
     WebDriver driver = WebDriverSingleton.getInstance();
@@ -31,8 +32,14 @@ public class MenuPage {
 
     }
     public void clickCandidates() {
-        WebElement element = driver.findElement(MenuPageElements.CANDIDATES);
-        element.click();
+//        WebElement element = driver.findElement(MenuPageElements.CANDIDATES);
+//        element.click();
+        Actions actions = new Actions(driver);
+        WebElement element = driver.findElement(MenuPageElements.LEFT_ICON);
+        actions.moveToElement(element).build().perform();
+        WebElement element1 = driver.findElement(MenuPageElements.CANDIDATES);
+        actions.moveToElement(element1).build().perform();
+        element1.click();
 
     }
     public void clickPatterns() {
