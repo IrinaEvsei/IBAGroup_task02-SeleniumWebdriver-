@@ -5,6 +5,13 @@ import edu.bsuir.elements.Element;
 import edu.bsuir.elements.candidatepageelements.CreateCandidatePageElements;
 import org.openqa.selenium.WebDriver;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
 public class CreateCandidatePage {
     WebDriver driver =  WebDriverSingleton.getInstance();
 
@@ -68,5 +75,41 @@ public class CreateCandidatePage {
     public String readErrorMessage(){ return CreateCandidatePageElements.ERROR_MESSAGE.getElementText(); }
     public String readWrongTelephone(){ return CreateCandidatePageElements.WRONG_TELEPHONE.getElementText();}
     public String readWrongEmail(){ return CreateCandidatePageElements.WRONG_EMAIL.getElementText();}
+
+    public String getAbsolutePath(String file) {
+        Path path = Paths.get(file);
+        return path.toAbsolutePath().toString();
+    }
+
+    public void uploadFileUsingRobot(String fName) {
+        CreateCandidatePageElements.ADD_ATTACHMENT.doubleClick();
+        sendFile(getAbsolutePath("src/resources/" + fName + ""));
+    }
+    private void sendFile(String path) {
+        try{
+            setClipboardData(path);
+            Robot robot = new Robot();
+            robot.delay(1000);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.delay(1000);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            robot.delay(1000);
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void uploadFileUsingSelenium(String fName) {
+        CreateCandidatePageElements.UPLOAD_RESUME.typeText(getAbsolutePath("resources/" + fName + ""));
+    }
+
+    private void setClipboardData(String str) {
+        StringSelection strSelection = new StringSelection(str);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(strSelection, null);
+    }
 
 }

@@ -90,4 +90,11 @@ public class CreateCandidatePageElements {
     public static final Element ERROR_MESSAGE = new Element("Сообщение об ошибке", By.xpath("//*[@id=\"errorMessage\"]"));
     public static final Element WRONG_TELEPHONE = new Element("", By.xpath("//div[@class='validateTelephone']"));
     public static final Element WRONG_EMAIL = new Element("", By.xpath("//div[@class='email']"));
+
+    public static final Element UPLOAD_RESUME = new Element("Загрузить резюме",
+            By.xpath("//input[@id = 'profileCVInput']"));
+    public static final Element ADD_ATTACHMENT = new Element("Прикрепить файл",
+            By.xpath("//label[@id = 'add-attachment']//i[@class =  'fa fa-plus add-attachment']"));
+    public static final Element ADDED_ATTACHMENT = new Element("Прикрепленный файл",
+            By.xpath("//div[@class = 'control-group']//span[@class = 'link']"));
 }

@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import javax.xml.bind.JAXBException;
+
 /*
 *Также, следует тестировать следующее:
   * сохранение кандидата в БД
@@ -98,6 +99,7 @@ public class CreateCandidatePageTest extends LoginPageTest {
         createCandidatePage.clickBackToListLink();
         Assert.assertEquals("http://testing.cld.iba.by/web/guest/recruiting/candidates/-/candidates/", driver.getCurrentUrl());
     }
+
 
     @After
     public void shutDown() {
