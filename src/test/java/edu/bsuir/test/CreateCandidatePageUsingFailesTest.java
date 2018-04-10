@@ -125,6 +125,32 @@ public class CreateCandidatePageUsingFailesTest extends LoginPageTest {
         Assert.assertEquals(CreateCandidatePageElements.ADDED_ATTACHMENT.getElement().getText(),"EvseiIrina.docx");
     }
 
+
+    //Баг в структуре резюме в документе .pdf . Не совпадают элементы NAME.
+    // Прикрепила скриншот(в src/resources/BugInResume.png)
+    @Test
+    public void uploadResumeUsingSikuli() throws Exception {
+        driver.get("http://testing.cld.iba.by/web/guest/recruiting/candidates/-/candidates/createProfile");
+        Pattern filePath = new Pattern("src/resources/FilePath.jpg");
+        Pattern openButton = new Pattern("src/resources/OpenFile.jpg");
+        Element uploadButton = new Element("Upload", By.id("loadCVLink"));
+        uploadButton.getElement().click();
+        Element okButton = new Element("OK", By.xpath("//button[text() = 'OK']"));
+        okButton.getElement().click();
+        Screen screen = new Screen();
+        screen.wait(filePath,20);
+        screen.click(filePath);
+        screen.type(getAbsolutePath("src/resources/EvseiIrina.pdf"));
+        screen.click(openButton);
+        screen.click(openButton);
+        Helper.wait(3);
+        Assert.assertEquals("Evsei",CreateCandidatePageElements.SURNAME.getElement().getAttribute("value"));
+        //Assert.assertEquals("Irina",CreateCandidatePageElements.NAME.getElement().getAttribute("value"));
+        Assert.assertEquals("+375333496571",CreateCandidatePageElements.PHONE.getElement().getAttribute("value"));
+        Assert.assertEquals("Belarus",CreateCandidatePageElements.COUNTRY.getElement().getAttribute("value"));
+        Assert.assertEquals("Minsk",CreateCandidatePageElements.CITY.getElement().getAttribute("value"));
+    }
+
     @After
     public void shutDown() {
         driver.close();
