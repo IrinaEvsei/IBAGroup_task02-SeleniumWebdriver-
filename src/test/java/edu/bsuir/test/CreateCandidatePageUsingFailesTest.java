@@ -1,11 +1,17 @@
 package edu.bsuir.test;
 
+import com.sun.org.glassfish.gmbal.Description;
 import edu.bsuir.driver.WebDriverSingleton;
 import edu.bsuir.elements.Element;
 import edu.bsuir.elements.candidatepageelements.CandidatePageElements;
 import edu.bsuir.elements.candidatepageelements.CreateCandidatePageElements;
 import edu.bsuir.helper.Helper;
 import edu.bsuir.pages.CreateCandidatePage;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -35,6 +41,11 @@ public class CreateCandidatePageUsingFailesTest extends LoginPageTest {
     }
 
     @Test
+    @DisplayName("Загрузка файла")
+    @Description("Загрузка файла используя Silenium")
+    @Feature("Кандидаты")
+    @Story("Сценарий 1 - загрузка фото")
+    @Severity(SeverityLevel.NORMAL)
     public void uploadFileProfileImageUsingSelenium() {
         final String noAvatar = "http://testing.cld.iba.by/TC-RecruitingAndOnboarding-portlet/common/css/images/no-avatar.jpg";
 
@@ -46,6 +57,11 @@ public class CreateCandidatePageUsingFailesTest extends LoginPageTest {
     }
 
     @Test
+    @DisplayName("Загрузка файла")
+    @Description("Загрузка файла используя Silenium")
+    @Feature("Кандидаты")
+    @Story("Сценарий 2 - Создание кандидата")
+    @Severity(SeverityLevel.NORMAL)
     public void uploadFileUsingSelenium() {
         final String noAttachedFile = "//*[@id=\"attached-files\"]";
 
@@ -85,6 +101,11 @@ public class CreateCandidatePageUsingFailesTest extends LoginPageTest {
     }
 
     @Test
+    @DisplayName("Загрузка файла")
+    @Description("Загрузка файла используя Sikuli")
+    @Feature("Кандидаты")
+    @Story("Сценарий 3 - Создание кандидата")
+    @Severity(SeverityLevel.NORMAL)
     public void uploadFileUsingSikuli() throws Exception {
         final String noAvatar = "http://testing.cld.iba.by/TC-RecruitingAndOnboarding-portlet/common/css/images/no-avatar.jpg";
         Pattern filePath = new Pattern("src/resources/FilePath.jpg");
@@ -103,6 +124,11 @@ public class CreateCandidatePageUsingFailesTest extends LoginPageTest {
     }
 
     @Test
+    @DisplayName("Создание кандидата")
+    @Description("Позитивное создание кандидата с помощью резюме")
+    @Feature("Кандидаты")
+    @Story("Сценарий 4 - Создание кандидата")
+    @Severity(SeverityLevel.CRITICAL)
     public void uploadResumeUsingInput() throws InterruptedException {
         driver.get("http://testing.cld.iba.by/web/guest/recruiting/candidates/-/candidates/createProfile");
         WebElement uploadButton = driver.findElement(By.id("profileCVInput"));
@@ -118,6 +144,11 @@ public class CreateCandidatePageUsingFailesTest extends LoginPageTest {
         Assert.assertEquals( "1998", CreateCandidatePageElements.DATE_OF_BIRTH_YEAR.getElement().getAttribute("value"));
     }
     @Test
+    @DisplayName("Загрузка файла")
+    @Description("Загрузка файла с использованием Robot")
+    @Feature("Кандидаты")
+    @Story("Сценарий 5 - Создание кандидата")
+    @Severity(SeverityLevel.NORMAL)
     public void uploadFileUsingRobot() throws InterruptedException {
         driver.get("http://testing.cld.iba.by/web/guest/recruiting/candidates/-/candidates/createProfile");
         createCandidatePage.uploadFileUsingRobot("EvseiIrina.docx");
@@ -129,6 +160,11 @@ public class CreateCandidatePageUsingFailesTest extends LoginPageTest {
     //Баг в структуре резюме в документе .pdf . Не совпадают элементы NAME.
     // Прикрепила скриншот(в src/resources/BugInResume.png)
     @Test
+    @DisplayName("Загрузка резюме")
+    @Description("Загрузка резюме используя Sikuli")
+    @Feature("Кандидаты")
+    @Story("Сценарий 1 - Создание кандидата")
+    @Severity(SeverityLevel.CRITICAL)
     public void uploadResumeUsingSikuli() throws Exception {
         driver.get("http://testing.cld.iba.by/web/guest/recruiting/candidates/-/candidates/createProfile");
         Pattern filePath = new Pattern("src/resources/FilePath.jpg");

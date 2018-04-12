@@ -1,6 +1,12 @@
 package edu.bsuir.test;
 
+import com.sun.org.glassfish.gmbal.Description;
 import edu.bsuir.driver.WebDriverSingleton;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -36,6 +42,11 @@ public class TestExample {
     }
 
     @Test
+    @DisplayName("Пункт заявка")
+    @Description("Поиск пункта заявки")
+    @Feature("Подбор и адаптация")
+    @Story("Поиск пункта меню")
+    @Severity(SeverityLevel.BLOCKER)
     public void findApplication () {
         driver.get("http://testing.cld.iba.by/");
         WebElement cell = driver.findElement(By.xpath("//a[@href = 'http://testing.cld.iba.by/web/guest/recruiting']"));
@@ -44,6 +55,11 @@ public class TestExample {
     }
 
     @Test
+    @DisplayName("Добавление завяки")
+    @Description("Добавление завяки")
+    @Feature("Подбор и адаптация")
+    @Story("Добавление завяки")
+    @Severity(SeverityLevel.BLOCKER)
     public void addApplication(){
         driver.get("http://testing.cld.iba.by/web/guest/recruiting");
         WebElement request = driver.findElement(By.xpath("//*[@id=\"addRequest\"]/div[2]/div[2]/a"));
@@ -52,6 +68,11 @@ public class TestExample {
     }
 
     @Test
+    @DisplayName("Создание заявки")
+    @Description("Создание заявки на вакансию")
+    @Feature("Подбор и адаптация/Заявки")
+    @Story("Создание вакансии")
+    @Severity(SeverityLevel.CRITICAL)
     public void createApplication() throws InterruptedException {
         driver.get("http://testing.cld.iba.by/web/guest/recruiting/applications/-/applications/createApplication");
 
@@ -124,5 +145,10 @@ public class TestExample {
 
         WebElement message = driver.findElement(By.id("sendToApprovalButton"));
         Assert.assertEquals("Отправить на согласование",message.getText());
+    }
+    @After
+    public void shutDown() {
+        driver.close();
+        WebDriverSingleton.destroyInstance();
     }
 }

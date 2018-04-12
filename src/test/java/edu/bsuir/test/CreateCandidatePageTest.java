@@ -1,9 +1,15 @@
 package edu.bsuir.test;
 
+import com.sun.org.glassfish.gmbal.Description;
 import edu.bsuir.driver.WebDriverSingleton;
 import edu.bsuir.elements.Element;
 import edu.bsuir.helper.Helper;
 import edu.bsuir.pages.CreateCandidatePage;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -35,6 +41,11 @@ public class CreateCandidatePageTest extends LoginPageTest {
     }
 
     @Test
+    @DisplayName("Создание кандидата")
+    @Description("Позитивное создание кандидата")
+    @Feature("Кандидаты")
+    @Story("Сценарий 1 - Создание кандидата")
+    @Severity(SeverityLevel.BLOCKER)
     public void createCandidateSuccessfully(){
         createCandidatePage.enterSurname("Евсей");
         createCandidatePage.enterName("Ирина");
@@ -56,6 +67,12 @@ public class CreateCandidatePageTest extends LoginPageTest {
     }
 
     @Test
+    @DisplayName("Удаление кандидата")
+    @Description("удаление после создания")
+    @Feature("Кандидаты")
+    @Story("Сценарий 2 - удаление")
+    @Severity(SeverityLevel.BLOCKER)
+
     public void createCandidateAndDelete() throws InterruptedException {
         createCandidatePage.enterSurname("Евсей");
         createCandidatePage.enterName("Ирина");
@@ -84,6 +101,11 @@ public class CreateCandidatePageTest extends LoginPageTest {
     }
 
     @Test
+    @DisplayName("Создание кандидата")
+    @Description("Создание кандидата с пустыми обязательными полями")
+    @Feature("Кандидаты")
+    @Story("Сценарий 3 - пустой")
+    @Severity(SeverityLevel.BLOCKER)
     public void emptyCandidateSave() throws InterruptedException {
         CreateCandidatePage createCandidate = new CreateCandidatePage();
         createCandidate.openCreateCandidatePage();
@@ -94,11 +116,16 @@ public class CreateCandidatePageTest extends LoginPageTest {
 
     }
 
-    @Test
-    public void checkBack(){
-        createCandidatePage.clickBackToListLink();
-        Assert.assertEquals("http://testing.cld.iba.by/web/guest/recruiting/candidates/-/candidates/", driver.getCurrentUrl());
-    }
+//    @Test
+//    @DisplayName("Поиск по имени")
+//    @Description("Поиск по имени кандидата")
+//    @Feature("Кандидаты")
+//    @Story("Проверка поиска")
+//    @Severity(SeverityLevel.CRITICAL)
+//    public void checkBack(){
+//        createCandidatePage.clickBackToListLink();
+//        Assert.assertEquals("http://testing.cld.iba.by/web/guest/recruiting/candidates/-/candidates/", driver.getCurrentUrl());
+//    }
 
 
     @After

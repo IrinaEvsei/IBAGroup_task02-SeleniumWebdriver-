@@ -1,14 +1,25 @@
 package edu.bsuir.test;
 
+import com.sun.org.glassfish.gmbal.Description;
+import edu.bsuir.driver.WebDriverSingleton;
 import edu.bsuir.elements.Element;
 import edu.bsuir.pages.LoginPage;
 import edu.bsuir.pages.MenuPage;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class MenuTest {
+    private WebDriver driver = WebDriverSingleton.getInstance();
+
     LoginPage lp = new LoginPage();
     MenuPage mp = new MenuPage();
 
@@ -24,10 +35,20 @@ public class MenuTest {
     }
 
     @Test
+    @DisplayName("SideBar")
+    @Description("Поиск пункта заявки")
+    @Feature("Главная")
+    @Story("Поиск пункта заявка в SideBar")
+    @Severity(SeverityLevel.BLOCKER)
     public void menuTest(){
         mp.openSidebar();
         mp.clickRecruiting();
         Element errorMessage = new Element("Заявки",By.xpath("//*[@id=\"content\"]/div[1]"));
         Assert.assertTrue(errorMessage.isElementPresent());
+    }
+    @After
+    public void shutDown() {
+        driver.close();
+        WebDriverSingleton.destroyInstance();
     }
 }
