@@ -3,6 +3,7 @@ package edu.bsuir.pages;
 import edu.bsuir.driver.WebDriverSingleton;
 import edu.bsuir.elements.HomePageElements;
 import edu.bsuir.elements.MenuPageElements;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,23 +15,32 @@ public class MenuPage {
         WebElement element = driver.findElement(HomePageElements.OPEN_MENU_BUTTON);
         element.click();
     }
+
+    @Step("Переход на главную страницу")
     public void clickHomeButton() {
         WebElement element = driver.findElement(HomePageElements.HOME_BUTTON);
         element.click();
     }
+
+    @Step("Переход на страницу подбора и адаптации")
     public void clickRecruiting() {
         WebElement element = driver.findElement(HomePageElements.RECRUITING_BUTTON);
         element.click();
     }
+
+    @Step("Переход на страницу заявок")
     public void clickApplications() {
         WebElement element = driver.findElement(MenuPageElements.APPLICATIONS);
         element.click();
     }
+
+    @Step("Переход на страницу вакансий")
     public void clickVacancies() {
         WebElement element = driver.findElement(MenuPageElements.VACANCIES);
         element.click();
-
     }
+
+    @Step("Переход на страницу кандидатов")
     public void clickCandidates() {
 //        WebElement element = driver.findElement(MenuPageElements.CANDIDATES);
 //        element.click();
